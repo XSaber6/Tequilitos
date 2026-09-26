@@ -5,15 +5,15 @@
 // Sensor de Color TCS3200
 const int S0 = 2;
 const int S1 = 3;
-const int S2 = 4;
-const int S3 = 5;
-const int sensorOut = 6; // Pin OUT del sensor
+const int S2 = 5;
+const int S3 = 6;
+const int sensorOut = 4; // Pin OUT del sensor
 
 // LEDs
-const int ledAmarillo = 8;
-const int ledRojo = 9;
-const int ledVerde = 10;
-const int ledAzul = 11;
+const int ledAmarillo = 11;
+const int ledRojo = 10;
+const int ledVerde = 9;
+const int ledAzul = 8;
 
 // Variables para lecturas de frecuencia
 int redFreq = 0;
@@ -56,16 +56,19 @@ void loop() {
   digitalWrite(S2, LOW);
   digitalWrite(S3, LOW);
   redFreq = pulseIn(sensorOut, LOW);
+  delay(200);
 
   // 2. Lectura del componente VERDE
   digitalWrite(S2, HIGH);
   digitalWrite(S3, HIGH);
   greenFreq = pulseIn(sensorOut, LOW);
+  delay(200);
 
   // 3. Lectura del componente AZUL
   digitalWrite(S2, LOW);
   digitalWrite(S3, HIGH);
   blueFreq = pulseIn(sensorOut, LOW);
+  delay(200);
 
   // Impresión en el Monitor Serie para seguimiento
   Serial.print("R: ");
@@ -107,3 +110,4 @@ void apagarTodosLosLEDs() {
   digitalWrite(ledVerde, LOW);
   digitalWrite(ledAzul, LOW);
 }
+
