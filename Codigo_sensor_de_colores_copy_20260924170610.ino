@@ -95,7 +95,7 @@ void loop() {
     diferenciaVerdeRojo = -diferenciaVerdeRojo;
   }
 
-  // no necesitamos diferencia verdeazul porque los tonos dados tienen muy similares la diferencia absoluta, excepto rosa
+  // no necesitamos diferencia verdeazul porque los tonos dados tienen muy similares la diferencia absoluta, excepto rosa y naranja pero se descartan por el rojo azul
   
 // step 3: más bools para las if conditions, primero evaluar si es cyan, luego rosa, amarillo y naranja
   
